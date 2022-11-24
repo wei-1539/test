@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <!-- <Embed Src="test.mp3" Loop="True" AutoStart="True"  id="music"> -->
+    <!-- <audio style="display:none; height: 0" id="bg-music" preload="auto" src="test.mp3" loop="loop"></audio> -->
+    <!-- <audio id="bg-music" autoplay="autoplay" controls="controls" src="test.mp3" loop="loop"></audio>
+    <script>
+        const music = document.querySelector("#bg-music")
+        window.addEventListener('DOMContentLoaded', function () {
+            console.log("hello")
+            function audioAutoPlay() {
+                var audio = document.getElementById('bg-music');
+                console.log(audio)
+                audio.click();
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    audio.play();
+                }, false);
+            }
+            audioAutoPlay();
+        });
+
+       
+    </script> -->
+
+    <audio id="music" src="test.mp3" autoplay="autoplay"
+        loop="loop">你的浏览器不支持audio标签。</audio>
+
+    <a id="audio_btn"><img src="https://play-lh.googleusercontent.com/y2Od7hvKRSTHUt4U-hTOFSp6clrrNK7JXGxjYur6ffCOypJpEcRX2HSRIgbuwjWPv54" width="48" height="50" id="music_btn" ></a>
+
+    <script>
+
+        $("#audio_btn").click(function () {
+
+            var music = document.getElementById("music");
+
+            if (music.paused) {
+
+                music.play();
+
+                $("#music_btn").attr("src", "https://play-lh.googleusercontent.com/y2Od7hvKRSTHUt4U-hTOFSp6clrrNK7JXGxjYur6ffCOypJpEcRX2HSRIgbuwjWPv54");
+
+            } else {
+
+                music.pause();
+
+                $("#music_btn").attr("src", "https://cdn-icons-png.flaticon.com/512/16/16427.png");
+
+            }
+
+        });
+
+    </script>
+</body>
+
+</html>
